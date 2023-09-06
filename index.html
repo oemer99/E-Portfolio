@@ -9,9 +9,19 @@
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("uRQXtfC0NSxeKgB0N");
+   })();
+</script>
   </head>
+
   <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)" >
       <nav>
         <figure>
           <img
@@ -21,7 +31,7 @@
           />
         </figure>
         <ul class="nav__link--list">
-          <li class="nav__link">
+          <li class="nav__link" onclick="toggleModal()" >
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -31,19 +41,16 @@
           </li>
           <li class="nav__link">
             <a
-              href="#"
+              href="#projects"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
               >Projects</a
             >
           </li>
-          <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Contact</a
-            >
+          <li class="nav__link" onclick="toggleModal()">
+            <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact</a>
           </li>
-          <li class="nav__link click">
+          <li class="nav__link click" onclick="toggleContrast()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -53,14 +60,15 @@
         </ul>
       </nav>
       <header class="header">
-        <h1 class="title">Hey</h1>
-        <h1 class="title red">I'm Ömer</h1>
+        <div class="header__content">
+        <h1 class="title">Hey <br><b class="red">I'm Ömer</b> </h1>
+        
         <p class="header__para">
           I'm a <b class="red">Full Stack Frontend Software Engineer</b> with a
           strong passion for building web applications with great user
           experiences.
           <br />
-          Here's a bit more <b class="red">ABOUT ME</b>
+          Here's a bit more <b class="red click" onclick="toggleModal()" >ABOUT ME</b>
         </p>
         <div class="social__list">
           <a
@@ -78,12 +86,15 @@
             <i class="fab fa-github"></i>
           </a>
         </div>
+      </div>
       </header>
-      <button class="mail__btn click">
+      <a href="#">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fas fa-envelope"></i>
       </button>
+    </a>
       <a href="#projects" class="scroll">
-        <div class="scroll__icon click"></div>
+        <div class="scroll__icon click" ></div>
       </a>
       <div class="modal">
         <div class="modal__half modal__about">
@@ -131,20 +142,21 @@
           </div>
         </div>
         <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
           <h3 class="modal__title modal__title--contact">Lets have a chat!</h3>
           <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h4>
-          <form id="contant__form" action="">
+          <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
               <label class="form__item--label">Name</label>
-              <input type="text" class="input" name="user_name" required></input>
+              <input type="text" class="input" name="user_name" required ></input>
             </div>
             <div class="form__item">
               <label class="form__item--label">E-mail</label>
-              <input type="email" class="input" name="user_email" required></input>
+              <input type="email" class="input" name="user_email" required ></input>
             </div>
             <div class="form__item">
               <label class="form__item--label">Message</label>
-              <textarea type="text" class="input" name="message" required></textarea>
+              <textarea type="text" class="input" name="message" required ></textarea>
             </div>
             <button id="contact__submit" class="form__submit">Send it my way</button>
           </form>
@@ -154,8 +166,17 @@
           <div class="modal__overlay modal__overlay--success">
             Thanks for the message! Looking forward to speaking to you soon.
           </div>
-          <i class="fas fa-times modal__exit click"></i>
       </div>
+      </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0">
+      <img src="./assets/circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/circle.svg" class="shape shape--3">
+      <img src="./assets/triangle.svg" class="shape shape--4">
+      <img src="./assets/circle.svg" class="shape shape--5">
+      <img src="./assets/squiggly.svg" class="shape shape--6">
+      <img src="./assets/circle.svg" class="shape shape--7">
+      <img src="./assets/semi circle.svg" class="shape shape--8">
     </section>
     <section id="projects">
       <div class="container">
@@ -247,18 +268,16 @@
           <div class="footer__social--list">
             <a
               href="https://www.linkedin.com/in/ömer-ay-a10337232/"
-              class="footer__social--link link__hover-effect link__hover-effect--white"
-            >
+              class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">
               LinkedIn
             </a>
             <a
               href="https://github.com/oemer99"
-              class="footer__social--link link__hover-effect link__hover-effect--white"
-            >
+              class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">
               Github
             </a>
             <a
-              href=""
+              href="#" onclick="toggleModal()"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               Contact
