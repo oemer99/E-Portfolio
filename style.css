@@ -88,7 +88,7 @@ input:focus, textarea:focus{
 }
 
 .title{
-    font-size: 120px;
+    font-size: 100px;
     margin-bottom: 12px;
     text-align: left;
     line-height: 1;
@@ -189,12 +189,12 @@ nav,
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     padding: 0 30px;
 }
 
 .header__para{
-    font-size: 24px;
+    font-size: 22px;
     line-height: 2;
     max-width: 480px;
 }
@@ -283,7 +283,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
     height: 100px;
