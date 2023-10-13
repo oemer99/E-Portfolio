@@ -382,6 +382,7 @@ nav {
     transform: scale(1);
 }
 
+
 .modal__language:hover{
     filter: brightness(80%);
     transform: scale(0.9);
