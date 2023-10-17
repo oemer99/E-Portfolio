@@ -700,6 +700,10 @@ text-decoration: none;
     .modal__half{
         width: 100%;
     }
+    .shape{
+    opacity: 0;
+
+    }
 }
 
 /* Small Phones */
@@ -727,5 +731,8 @@ text-decoration: none;
     }
     .modal__half{
         padding: 40px;
+    }
+    .shape{
+        opacity: 0;
     }
 }
